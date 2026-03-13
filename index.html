@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="List of lab-tested supplements, pesticide free foods & safe personal care products">
+<meta name="keywords" content="supplement, chemical free, pesticide free, natural, organic, food, personal care">
+<title>List of clean supplements, foods & personal care products</title>
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/960px-Flag_of_India.svg.png" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Open Graph Card-->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://healthyproducts.in/" />
+<meta property="og:title" content="healthyproducts.in" />
+<meta property="og:description" content="List of lab-tested supplements, pesticide free foods & safe personal care products." />
+<meta property="og:image" content="https://healthyproducts.in/HealthyProducts.png" />
+
+<!-- Twitter specific Open Graph -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://healthyproducts.in/" />
+<meta name="twitter:title" content="healthyproducts.in" />
+<meta name="twitter:description" content="List of lab-tested supplements, pesticide free foods & safe personal care products." />
+<meta name="twitter:image" content="https://healthyproducts.in/HealthyProducts.png" />
+
+
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #2a3340;
+    --accent: #4ade80;
+    --accent2: #86efac;
+    --gold: #fbbf24;
+    --emerald: #10b981;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --text-dim: #4a5568;
+    --pill-bg: rgba(74, 222, 128, 0.08);
+    --pill-border: rgba(74, 222, 128, 0.2);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    padding: 80px 24px 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(74,222,128,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--pill-border);
+    background: var(--pill-bg);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 span {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .hero p {
+    max-width: 520px;
+    margin: 0 auto 20px;
+    color: var(--text-muted);
+    font-size: 15px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .update-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--gold);
+    background: rgba(251,191,36,0.08);
+    border: 1px solid rgba(251,191,36,0.2);
+    padding: 6px 14px;
+    border-radius: 100px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  /* ── STICKY NAV ── */
+  .nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 16px;
+    background: rgba(13,17,23,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    animation: fadeDown 0.5s 0.4s ease both;
+  }
+
+  .nav {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    background: var(--pill-bg);
+    border-color: var(--pill-border);
+    color: var(--accent);
+  }
+
+  .nav-btn .icon { font-size: 15px; }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 16px 80px;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 56px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .section-count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-dim);
+    background: var(--surface2);
+    padding: 3px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+  }
+
+  /* ── PRODUCT GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover {
+    border-color: var(--pill-border);
+    background: var(--surface2);
+    transform: translateY(-2px);
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  .card-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--accent2);
+    background: rgba(74,222,128,0.06);
+    border: 1px solid rgba(74,222,128,0.15);
+    padding: 4px 11px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+
+  .link-btn:hover {
+    background: rgba(74,222,128,0.14);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .link-btn svg {
+    width: 10px; height: 10px;
+    flex-shrink: 0;
+  }
+
+  .card-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    line-height: 1.5;
+    font-style: italic;
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+  }
+
+  /* ── TESTS LIST ── */
+  .tests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .test-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    transition: all 0.2s;
+  }
+
+  .test-item:hover {
+    border-color: var(--pill-border);
+    background: var(--surface2);
+  }
+
+  .test-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 5px;
+    box-shadow: 0 0 6px var(--accent);
+  }
+
+
+  .how-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+
+  .how-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+
+  .step {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .step:first-of-type { padding-top: 0; }
+
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--pill-bg);
+    border: 1px solid var(--pill-border);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-text { font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+  .step-text a { color: var(--accent2); text-decoration: none; }
+  .step-text a:hover { text-decoration: underline; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    background: rgba(251,191,36,0.05);
+    border: 1px solid rgba(251,191,36,0.15);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 48px;
+  }
+
+  .disclaimer strong { color: var(--gold); }
+
+  .info {
+    background: rgba(16, 185, 129, 0.08); 
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 48px;
+    }
+
+   .info strong { color: var(--emerald); }
+
+  
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px 16px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 60px 20px 40px; }
+    .grid { grid-template-columns: 1fr; }
+    .tests-grid { grid-template-columns: 1fr 1fr; }
+    .nav { justify-content: flex-start; }
+    .section-count { display: none; }
+  }
+
+  @media (max-width: 400px) {
+    .tests-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL TO TOP ── */
+  #scrollTop {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 200;
+    font-size: 16px;
+  }
+
+  #scrollTop.show { opacity: 1; }
+  #scrollTop:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">Updated Monthly</div>
+  <h1>India's Cleanest<br><span>Products</span></h1>
+  <p>Lab-tested, community-verified supplements, foods & personal care products — curated in one list.</p>
+  <div class="update-note">⚡ Re-check this list monthly before purchasing</div>
+</section>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <button class="nav-btn" data-target="supplements"><span class="icon">💊</span> Supplements</button>
+    <button class="nav-btn" data-target="food"><span class="icon">💪</span> Food</button>
+    <button class="nav-btn" data-target="toothpaste"><span class="icon">🦷</span> Toothpaste</button>
+    <button class="nav-btn" data-target="soap"><span class="icon">🧼</span> Soap</button>
+    <button class="nav-btn" data-target="bodywash"><span class="icon">🛀</span> Body Wash</button>
+    <button class="nav-btn" data-target="lotion"><span class="icon">🧴</span> Lotion</button>
+    <button class="nav-btn" data-target="shampoo"><span class="icon">🚿</span> Shampoo</button>
+    <button class="nav-btn" data-target="products"><span class="icon">👌</span> Others</button>
+    <button class="nav-btn" data-target="tests"><span class="icon">🏥</span> Tests</button>
+    <button class="nav-btn" data-target="how"><span class="icon">🤔</span> How products gets listed?</button>
+  </nav>
+</div>
+
+<main class="main">
+
+  <!-- SUPPLEMENTS -->
+  <div class="section" id="supplements">
+    <div class="section-header">
+      <div class="section-icon">💊</div>
+      <h2 class="section-title">Supplements</h2>
+      <span class="section-count">7 picks</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-name">Whey Protein</div>
+        <div class="card-links">
+          <a href="https://mswn.in/4df1vr7ld" target="_blank" class="link-btn">OWN <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/3MNvvhK" target="_blank" class="link-btn">Trunativ <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/44Pl7w9" target="_blank" class="link-btn">Unflavoured <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+        <div class="card-note">To reduce cost: Mix half unflavoured + half Trunativ flavoured whey.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Plant / Vegan Protein</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4oHGIh6" target="_blank" class="link-btn">Origin Nutrition <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Creatine</div>
+        <div class="card-links">
+          <a href="https://www.amazon.in/dp/B07W95BV9H" target="_blank" class="link-btn">Nutrabay <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Vitamin D3 + K2</div>
+        <div class="card-links">
+          <a href="https://amzn.to/404DP0e" target="_blank" class="link-btn">Tata 1mg <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/48uJul6" target="_blank" class="link-btn">Wellbeing Nutrition <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+        <div class="card-note">Tata 1mg is the cheaper option.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Magnesium</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4iRPKXQ" target="_blank" class="link-btn">Wellbeing Nutrition <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Fish Oil (Omega 3)</div>
+        <div class="card-links">
+          <a href="https://amzn.to/48sB1yX" target="_blank" class="link-btn">Wellbeing Nutrition <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Collagen</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4l6xx9N" target="_blank" class="link-btn">Nutrabud <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+        <div class="card-note">Non-Veg source.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="section" id="food">
+    <div class="section-header">
+      <div class="section-icon">💪</div>
+      <h2 class="section-title">Food</h2>
+      <span class="section-count">7 picks</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-name">Atta / Wheat</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4aIUxbA" target="_blank" class="link-btn">Rosier Foods <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Turmeric Powder (Haldi)</div>
+        <div class="card-links">
+          <a href="https://amzn.to/409G6qV" target="_blank" class="link-btn">Two Brothers <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Jaggery Powder</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4riloQP" target="_blank" class="link-btn">Two Brothers <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+        <div class="card-note">Sugar alternative</div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Ghee</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4ddcW1E" target="_blank" class="link-btn">Two Brothers <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Honey</div>
+        <div class="card-links">
+          <a href="https://amzn.to/40tHIMi" target="_blank" class="link-btn">Rosier Foods <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Muesli</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4l2r6oh" target="_blank" class="link-btn">The Whole Truth <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Peanut Butter</div>
+        <div class="card-links">
+          <a href="https://amzn.to/48HXQgG" target="_blank" class="link-btn">The Whole Truth <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-name">Grocery</div>
+        <div class="card-links">
+          <a class="link-btn">Organic India<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5.5 L4 8 L8.5 2"/></svg></a>
+          <a class="link-btn">24 Mantra Organic<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5.5 L4 8 L8.5 2"/></svg></a>
+          <a class="link-btn">Organic Tattva<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5.5 L4 8 L8.5 2"/></svg></a>
+          <a class="link-btn">Natureland<svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.5 5.5 L4 8 L8.5 2"/></svg></a>
+        </div>
+        <div class="card-note">Use local organic sellers or these brand's products for monthly groceries</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOOTHPASTE -->
+  <div class="section" id="toothpaste">
+    <div class="section-header">
+      <div class="section-icon">🦷</div>
+      <h2 class="section-title">Toothpaste</h2>
+      <span class="section-count">5 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Organic</div>
+        <div class="card-links"><a href="https://amzn.to/4r5XZSm" target="_blank" class="link-btn">Himalaya Botanique Complete Care <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Premium</div>
+        <div class="card-links">
+          <a href="https://amzn.to/4b7Kz2y" target="_blank" class="link-btn">Fang Farm Mint <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/4rOmSmU" target="_blank" class="link-btn">Dente91 <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-name">Whitening</div>
+        <div class="card-links"><a href="https://amzn.to/3OSng56" target="_blank" class="link-btn">Perfora Dream White <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Sensitivity</div>
+        <div class="card-links"><a href="https://amzn.to/3MPwSgv" target="_blank" class="link-btn">Sensodyne Rapid Relief <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Kids</div>
+        <div class="card-links"><a href="https://amzn.to/4r1b2Ez" target="_blank" class="link-btn">Little Joys <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOAP -->
+  <div class="section" id="soap">
+    <div class="section-header">
+      <div class="section-icon">🧼</div>
+      <h2 class="section-title">Soap</h2>
+      <span class="section-count">3 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Sebamed Cleansing Bar</div>
+        <div class="card-links"><a href="https://amzn.to/4bgW6O6" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Himalaya Ayurveda Clear</div>
+        <div class="card-links"><a href="https://amzn.to/4rIFiFn" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Mamaearth Neem</div>
+        <div class="card-links"><a href="https://amzn.to/4rMb3Ob" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY WASH -->
+  <div class="section" id="bodywash">
+    <div class="section-header">
+      <div class="section-icon">🛀</div>
+      <h2 class="section-title">Body Wash</h2>
+      <span class="section-count">3 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Minimalist Salicylic Acid + LHA</div>
+        <div class="card-links"><a href="https://amzn.to/4l6RfCu" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Chemist at Play Daily Exfoliating</div>
+        <div class="card-links"><a href="https://amzn.to/3MCCxGH" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Mamaearth Ubtan Body Wash</div>
+        <div class="card-links"><a href="https://amzn.to/4l0yzEe" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOTION -->
+  <div class="section" id="lotion">
+    <div class="section-header">
+      <div class="section-icon">🧴</div>
+      <h2 class="section-title">Body Lotion</h2>
+      <span class="section-count">3 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Mamaearth Rice Water</div>
+        <div class="card-links"><a href="https://amzn.to/4b1sIKu" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">CeraVe / Cetaphil Moisturising Lotion</div>
+        <div class="card-links">
+          <a href="https://amzn.to/3OK7Tf1" target="_blank" class="link-btn">CeraVe <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/4aMLQ00" target="_blank" class="link-btn">Cetaphil <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-name">Himalaya Cocoa Butter</div>
+        <div class="card-links"><a href="https://amzn.to/3N0lE8N" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHAMPOO -->
+  <div class="section" id="shampoo">
+    <div class="section-header">
+      <div class="section-icon">🚿</div>
+      <h2 class="section-title">Shampoo</h2>
+      <span class="section-count">3 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Mamaearth</div>
+        <div class="card-links">
+          <a href="https://amzn.to/46Dzrce" target="_blank" class="link-btn">Onion <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+          <a href="https://amzn.to/4rGw2BH" target="_blank" class="link-btn">Rice Water <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-name">The Derma Hairfall Control</div>
+        <div class="card-links"><a href="https://amzn.to/3OFyNEY" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+      <div class="card">
+        <div class="card-name">Minimalist Bond Repair</div>
+        <div class="card-links"><a href="https://amzn.to/4b3QlCc" target="_blank" class="link-btn">Buy <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section" id="products">
+    <div class="section-header">
+      <div class="section-icon">👌</div>
+      <h2 class="section-title">Other Products</h2>
+      <span class="section-count">2 picks</span>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-name">Incense Sticks (Agarbatti)</div>
+        <div class="card-links"><a href="https://amzn.to/4aDt7nC" target="_blank" class="link-btn">Phool <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+        <div class="card-note">Don't light for hours indoors.</div>
+      </div>
+      <div class="card">
+        <div class="card-name">Cooking Oil Spray Dispenser</div>
+        <div class="card-links"><a href="https://amzn.to/48q9ONk" target="_blank" class="link-btn">Amazon <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a></div>
+        <div class="card-note">Spraying oil is healthier than pouring.</div>  
+    </div>
+    </div>
+  </div>
+
+  <!-- TESTS -->
+  <div class="section" id="tests">
+    <div class="section-header">
+      <div class="section-icon">🏥</div>
+      <h2 class="section-title">Mandatory Body Checkup Tests</h2>
+      <span class="section-count">10 tests</span>
+    </div>
+    <div class="tests-grid">
+      <div class="test-item"><div class="test-dot"></div>Prostate-Specific Antigen (PSA) — Prostate Cancer (men)</div>
+      <div class="test-item"><div class="test-dot"></div>Vitamin D and B12</div>
+      <div class="test-item"><div class="test-dot"></div>Complete Blood Count (CBC)</div>
+      <div class="test-item"><div class="test-dot"></div>Lipid Profile (Total, LDL, HDL, Triglycerides)</div>
+      <div class="test-item"><div class="test-dot"></div>Kidney Function Test (Serum creatinine + eGFR)</div>
+      <div class="test-item"><div class="test-dot"></div>Liver Function Test (ALT, AST, GGT, bilirubin, albumin)</div>
+      <div class="test-item"><div class="test-dot"></div>Thyroid Test (TSH)</div>
+      <div class="test-item"><div class="test-dot"></div>HbA1c (glycated hemoglobin)</div>
+      <div class="test-item"><div class="test-dot"></div>HOMA-IR (insulin resistance)</div>
+      <div class="test-item"><div class="test-dot"></div>hs-CRP (inflammation / heart disease)</div>
+    </div>
+    <p style="margin-top:14px; font-size:12.5px; color:var(--text-dim);">Also consider ECG & Chest X-Ray once a year. Add missing tests independently if not included in your package.</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section" id="how">
+    <div class="section-header">
+      <div class="section-icon">🤔</div>
+      <h2 class="section-title">How are products chosen?</h2>
+    </div>
+    <div class="how-card">
+      <h3>Selection Criteria</h3>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Must be independently lab-tested for adulteration, US/EU banned substances, heavy metals etc. Tests sourced from <a href="https://www.unboxhealth.in/explore" target="_blank">Unbox Health</a>, <a href="https://x.com/theliverdr" target="_blank">The Liver Doc</a>, <a href="https://x.com/chiragbarjatyaa" target="_blank">Chirag Barjatya</a>, <a href="https://www.youtube.com/@Trustified-Certification" target="_blank">Trustified</a>, <a href="https://www.youtube.com/@Foodpharmer" target="_blank">Food Pharmer</a> & others.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Among products passing step 1, comparatively cheapest one in that category is selected.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">After 1 & 2, that product must be used by some <a href="https://www.saveinvestrepeat.com/community" target="_blank">SIR Community</a> members for at least 2 months.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Only then it gets listed above.</div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Zero brand influence, ads or paid placements for brands.</div></div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>⚠️ Disclaimer:</strong> This website is for education & entertainment purposes only. Website maintainer is not a medical expert & holds no medical degrees. Nothing on this website constitutes medical advice. <strong>Please consult a qualified expert before making health decisions.</strong>
+  </div>
+
+  <div class="info">
+    <strong>🔗 Links:</strong> Many mistakenly buy duplicate products by searching brand names directly on Amazon. Links are provided to direct you to the original product. Some links provide 3-4% affiliate income at no extra cost to you. Entire affiliate income is donated monthly (screenshots shared inside <a href="https://www.saveinvestrepeat.com/community" target="_blank">SIR Community</a> group).
+  </div>
+
+</main>
+
+<footer>
+  <p><a href="https://saveinvestrepeat.com/privacy-policy/" target="_blank">Privacy</a> &nbsp;·&nbsp; <a href="https://saveinvestrepeat.com/terms/" target="_blank">Terms</a> &nbsp;·&nbsp; <a href="https://www.saveinvestrepeat.com/community/" target="_blank">Join Community</a></p>
+</footer>
+
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+  // Scroll to section (renamed to avoid conflict with window.scrollTo)
+  function goToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navHeight = document.querySelector('.nav-wrap').offsetHeight;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  // Wire nav buttons via data-target
+  document.querySelectorAll('.nav-btn[data-target]').forEach(btn => {
+    btn.addEventListener('click', () => goToSection(btn.dataset.target));
+  });
+
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('.section[id]');
+  const navBtns = document.querySelectorAll('.nav-btn');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 140) current = s.id;
+    });
+    navBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.target === current);
+    });
+
+    // Scroll to top button
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Scroll to top button
+  document.getElementById('scrollTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Intersection observer for section fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
